@@ -1,0 +1,19 @@
+[project]
+name = "HW2 Treasury curve fits for the class report"
+description = "Derived zero-coupon Treasury yields, estimated independently from CRSP quotes on three committed dates in 2026."
+repo_url = "https://github.com/Weijie-Shen/finm32800-hw2-curve-data"
+requires_chartbook = ">=0.5.1"
+
+[dataframes.treasury_curve_fits]
+name = "Independent Svensson Treasury curve fits"
+description = "Zero-coupon yields in percent at integer maturities 1-30 years, with a wider-bound sensitivity fit."
+path = "treasury_curve_fits.csv"
+date_col = "date"
+docs = "Derived from HW2 using 300 filtered Treasury notes and bonds per date. Dates: March 31, June 30, September 30, 2026. maturity is years; yield_pct and sensitivity_yield_pct are continuously compounded annual rates in percentage points. See README for estimation bounds and limitations."
+
+[dataframes.fit_diagnostics]
+name = "Aggregate curve fitting diagnostics"
+description = "Sample sizes, objective values, convergence counts, and parameter-bound sensitivity; no security-level data."
+path = "fit_diagnostics.csv"
+date_col = "date"
+docs = "Fourteen deterministic starts per fit. Selection minimizes duration-weighted price loss, never distance from the Federal Reserve curve."
