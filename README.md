@@ -1,5 +1,10 @@
 # HW2 Treasury curve data for FINM 32800 issue 93
 
+On the `reviewer-setup` branch, [REVIEWER_SETUP.md](REVIEWER_SETUP.md) and
+`prepare_review.py` provide the tested public-data setup for class-report
+PR 191. The report continues to pin the unchanged `report-data` commit;
+these instructions do not move that pin or change its derived CSV files.
+
 This `report-data` branch publishes derived data only. It contains no raw quotes,
 CUSIPs, credentials, or graded homework solutions. The report reads it as a pinned
 ChartBook 0.5 git dependency; no build script or WRDS access is needed by readers.
