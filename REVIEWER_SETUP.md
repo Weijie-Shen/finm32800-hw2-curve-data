@@ -1,5 +1,28 @@
 # Reproduce class-report PR 191
 
+## November 20 update: an additional report input is now required
+
+PR 191 now includes main through `2cd1739`, in merge commit `f87c805`.
+Main's newly merged `option_returns_by_maturity` exhibit reads
+`ftsfr/options:ftsfr_cjs_option_returns`. This was not used by the November 17
+report tested below. The existing setup helper will correctly stop when this
+input is absent; it is no longer a complete setup for the latest report.
+
+For the latest report, reviewers additionally need the matching options-return
+dataframe, with SHA-256
+`3108fef3524ced667bb666c44584ad81a54501b283c8a3afae65a1e8ea80404e`, in their
+selected store. Its pinned upstream is `ftsfr/options` at
+`ed5f3352233faeed4978ac6307b46d720304518e`. That upstream's README describes a
+WRDS OptionMetrics build; use your own licensed access or an authorized transfer
+of the derived snapshot. Do not replace its pin with a newer result.
+
+The November 20 fresh-clone build stopped at that missing input. Our 17
+exhibit-specific tests, all 256 static checks, and Ruff passed; a successful
+full build of the current branch is **not** claimed. The instructions and
+successful full-build results below describe the November 17 version.
+
+## November 17 verified setup
+
 This guide prepares the external inputs read by the class report at merge
 commit `e7d8944`. It is supporting material for
 <https://github.com/finm-32800/finm_midterm_report/pull/191>, not a replacement
